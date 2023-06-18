@@ -3,249 +3,180 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.apache.beam.examples;
+package com.mycompany.mavenproject2;
 
 /**
  *
- * @author leo
+ * @author Alan
  */
-public class Aire {
+public class Locales {
     
-    private String id;
-    private String nombre;
-    private String key;
-    private String latitud;
-    private String longitud;
-    private String comuna;
-    private String red;
-    private String region;
-    private String regionIndex;
-    private String calificacion;
-    private String empresa;
+    private String fecha;
+    private String local_id;
+    private String fk_region;
+    private String fk_comuna;
+    private String fk_localidad;
+    private String local_nombre;
+    private String comuna_nombre;
+    private String localidad_nombre;
+    private String local_direccion;
+    private String funcionamiento_hora_apertura;
+    private String funcionamiento_hora_cierre;
+    private String local_telefono;
+    private String local_lat;
+    private String local_lng;
+    private String funcionamiento_dia;
     
     
-    //realtime
-    private String realtimeCode;
-    private String realtimeName;
-    private String realtimeDateTime;
     
-    //tableRow
-    private String color;
-    private String status;
-    private String statuscode;
-    private String datetime;
-    private String parameter;
-    private String movil;
-    private String value;
-    private String unit;
-    private String icap;
-    private String icapText;
-
-    public Aire() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     
-    public String getNombre() {
-        return nombre;
+    
+    public Locales(){
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getFecha() {
+        return fecha;
     }
 
-    public String getKey() {
-        return key;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public String getLocal_id() {
+        return local_id;
     }
 
-    public String getLatitud() {
-        return latitud;
+    public void setLocal_id(String local_id) {
+        this.local_id = local_id;
     }
 
-    public void setLatitud(String latitud) {
-        this.latitud = latitud;
+    public String getFk_region() {
+        return fk_region;
     }
 
-    public String getLongitud() {
-        return longitud;
+    public void setFk_region(String fk_region) {
+        this.fk_region = fk_region;
     }
 
-    public void setLongitud(String longitud) {
-        this.longitud = longitud;
+    public String getFk_comuna() {
+        return fk_comuna;
     }
 
-    public String getComuna() {
-        return comuna;
+    public void setFk_comuna(String fk_comuna) {
+        this.fk_comuna = fk_comuna;
     }
 
-    public void setComuna(String comuna) {
-        this.comuna = comuna;
+    public String getFk_localidad() {
+        return fk_localidad;
     }
 
-    public String getRed() {
-        return red;
+    public void setFk_localidad(String fk_localidad) {
+        this.fk_localidad = fk_localidad;
     }
 
-    public void setRed(String red) {
-        this.red = red;
+    public String getLocal_nombre() {
+        return local_nombre;
     }
 
-    public String getRegion() {
-        return region;
+    public void setLocal_nombre(String local_nombre) {
+        this.local_nombre = local_nombre;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
+    public String getComuna_nombre() {
+        return comuna_nombre;
     }
 
-    public String getRegionIndex() {
-        return regionIndex;
+    public void setComuna_nombre(String comuna_nombre) {
+        this.comuna_nombre = comuna_nombre;
     }
 
-    public void setRegionIndex(String regionIndex) {
-        this.regionIndex = regionIndex;
+    public String getLocalidad_nombre() {
+        return localidad_nombre;
     }
 
-    public String getCalificacion() {
-        return calificacion;
+    public void setLocalidad_nombre(String localidad_nombre) {
+        this.localidad_nombre = localidad_nombre;
     }
 
-    public void setCalificacion(String calificacion) {
-        this.calificacion = calificacion;
+    public String getLocal_direccion() {
+        return local_direccion;
     }
 
-    public String getEmpresa() {
-        return empresa;
+    public void setLocal_direccion(String local_direccion) {
+        this.local_direccion = local_direccion;
     }
 
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
+    public String getFuncionamiento_hora_apertura() {
+        return funcionamiento_hora_apertura;
     }
 
-    public String getRealtimeCode() {
-        return realtimeCode;
+    public void setFuncionamiento_hora_apertura(String funcionamiento_hora_apertura) {
+        this.funcionamiento_hora_apertura = funcionamiento_hora_apertura;
     }
 
-    public void setRealtimeCode(String realtimeCode) {
-        this.realtimeCode = realtimeCode;
+    public String getFuncionamiento_hora_cierre() {
+        return funcionamiento_hora_cierre;
     }
 
-    public String getRealtimeName() {
-        return realtimeName;
+    public void setFuncionamiento_hora_cierre(String funcionamiento_hora_cierre) {
+        this.funcionamiento_hora_cierre = funcionamiento_hora_cierre;
     }
 
-    public void setRealtimeName(String realtimeName) {
-        this.realtimeName = realtimeName;
+    public String getLocal_telefono() {
+        return local_telefono;
     }
 
-    public String getRealtimeDateTime() {
-        return realtimeDateTime;
+    public void setLocal_telefono(String local_telefono) {
+        this.local_telefono = local_telefono;
     }
 
-    public void setRealtimeDateTime(String realtimeDateTime) {
-        this.realtimeDateTime = realtimeDateTime;
+    public String getLocal_lat() {
+        return local_lat;
     }
 
-    public String getColor() {
-        return color;
+    public void setLocal_lat(String local_lat) {
+        this.local_lat = local_lat;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public String getLocal_lng() {
+        return local_lng;
     }
 
-    public String getStatus() {
-        return status;
+    public void setLocal_lng(String local_lng) {
+        this.local_lng = local_lng;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public String getFuncionamiento_dia() {
+        return funcionamiento_dia;
     }
 
-    public String getStatuscode() {
-        return statuscode;
+    public void setFuncionamiento_dia(String funcionamiento_dia) {
+        this.funcionamiento_dia = funcionamiento_dia;
     }
 
-    public void setStatuscode(String statuscode) {
-        this.statuscode = statuscode;
-    }
+  
+    
 
-    public String getDatetime() {
-        return datetime;
-    }
-
-    public void setDatetime(String datetime) {
-        this.datetime = datetime;
-    }
-
-    public String getParameter() {
-        return parameter;
-    }
-
-    public void setParameter(String parameter) {
-        this.parameter = parameter;
-    }
-
-    public String getMovil() {
-        return movil;
-    }
-
-    public void setMovil(String movil) {
-        this.movil = movil;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public String getIcap() {
-        return icap;
-    }
-
-    public void setIcap(String icap) {
-        this.icap = icap;
-    }
-
-    public String getIcapText() {
-        return icapText;
-    }
-
-    public void setIcapText(String icapText) {
-        this.icapText = icapText;
-    }
-
+    
     @Override
     public String toString() {
-        return "Aire{" + "id=" + id + ", nombre=" + nombre + ", key=" + key + ", latitud=" + latitud + ", longitud=" + longitud + ", comuna=" + comuna + ", red=" + red + ", region=" + region + ", regionIndex=" + regionIndex + ", calificacion=" + calificacion + ", empresa=" + empresa + ", realtimeCode=" + realtimeCode + ", realtimeName=" + realtimeName + ", realtimeDateTime=" + realtimeDateTime + ", color=" + color + ", status=" + status + ", statuscode=" + statuscode + ", datetime=" + datetime + ", parameter=" + parameter + ", movil=" + movil + ", value=" + value + ", unit=" + unit + ", icap=" + icap + ", icapText=" + icapText + '}';
+        return "Locales{" + "fecha=" + fecha + ", id=" + local_id + ", fk_region=" + fk_region + ", fk_comuna=" + fk_comuna + ", fk_localidad=" + fk_localidad + ", local_nombre=" + local_nombre +
+                ", comuna_nombre=" + comuna_nombre + ", localidad_nombre=" + localidad_nombre + ", local_direccion=" + local_direccion + 
+                ", funcionamiento_hora_apert=" + funcionamiento_hora_apertura + ", funcionamiento_hora_cierre=" + funcionamiento_hora_cierre + ", local_telefono=" + local_telefono + ", local_lat=" + local_lat + 
+                ", local_lng=" + local_lng + ", funcionamiento_dia=" + funcionamiento_dia + '}';
     }
     
-    public String toCSV()
+     public String toCSV()
     {
-        return "" + id + "," + nombre + "," + key + "," + latitud + "," + longitud + "," + comuna + "," + red + "," + region + "," +
-                regionIndex + "," + calificacion + "," + empresa + "," + realtimeCode + "," + realtimeName + "," + realtimeDateTime + "," + color + "," +
-                status + "," + statuscode + "," + datetime + "," + parameter + "," + movil + "," + value + "," + unit + "," + icap + "," + icapText + "";
+        return "" + fecha + "," + local_id + "," + fk_region + "," + fk_comuna + "," + fk_localidad + "," + local_nombre + "," + comuna_nombre + "," + localidad_nombre + "," +
+                local_direccion + "," + funcionamiento_hora_apertura + "," + funcionamiento_hora_cierre + 
+                "," + local_telefono + "," + local_lat + "," + local_lng + "," + funcionamiento_dia + "," + "";
     }
 
-}//Aire
+    
+    
+
+    
+    
+}//Locales
+
