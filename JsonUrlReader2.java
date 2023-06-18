@@ -18,141 +18,88 @@ import java.util.Iterator;
 
 /**
  *
- * @author leo
+ * @author Alan
  */
 public class JsonUrlReader2 {
-
-    public JsonUrlReader2()
-    {
+    
+    public JsonUrlReader2(){
         
     }
-      
-    public ArrayList<Aire> cargarURL() throws StreamReadException, DatabindException, MalformedURLException, IOException {
-        String url = "https://sinca.mma.gob.cl/index.php/json/listadomapa2k19/";
+    
+    
+    public ArrayList<Locales> cargarURL ()throws StreamReadException,DatabindException,MalformedURLException,IOException{
+        String url = "https://midas.minsal.cl/farmacia_v2/WS/getLocalesTurnos.php/";
         
-        ArrayList<Aire> aAire = new ArrayList();
-
-        //JsonNode node = new JsonUrlReader().get(url);
-        //System.out.println(node.toPrettyString());
-        
+        ArrayList<Locales> aLocales = new ArrayList();
         
         ObjectMapper mapper = new ObjectMapper();
-
-	System.out.println("Inicando mapper en JsonUrlReader");
+        
+        System.out.println("Inicando mapper en JsonUrlReader");
         JsonNode node = mapper.readTree(new URL(url));
 
         System.out.println("Finalizando mapper en JsonUrlReader");
         
-        
         Iterator<JsonNode> it = node.iterator();
         
-        Aire a = null;
-        a = new Aire();
-        a.setId("ID");
-        a.setNombre("NOMBRE");
-        a.setKey("KEY");
-        a.setLatitud("LATITUD");
-        a.setLongitud("LONGITUD");
-        a.setComuna("COMUNA");
-        a.setRed("RED");
-        a.setRegion("REGION");
-        a.setRegionIndex("REGIONINDEX");
-        a.setCalificacion("CALIFICACOIN");
-        a.setEmpresa("EMPRESA");
-
-        a.setRealtimeCode("CODE");
-        a.setRealtimeName("NAME");
-        a.setRealtimeDateTime("REALTIMEDATETIME");
-
-        a.setColor("COLOR");
-        a.setStatus("STATUS");
-        a.setStatuscode("STATUSCODE");
-        a.setDatetime("DATETIME");
-        a.setParameter("PARAMETER");
-        a.setMovil("MOVIL");
-        a.setValue("VALUE");
-        a.setUnit("UNIT");
-        a.setIcap("ICAP");
-        a.setIcapText("ICAPTEXT");
-	    
-	aAire.add(a);    
-
+        Locales a = null;
+        
+        a = new Locales();
+        a.setFecha("Fecha");
+        a.setLocal_id("Id");
+        a.setFk_region("Fk_region");
+        a.setFk_comuna("Fk_comuna");
+        a.setFk_localidad("Fk_localidad");
+        a.setLocal_nombre("Local_nombre");
+        a.setComuna_nombre("Comuna_nombre");
+        a.setLocalidad_nombre("Localidad_nombre");
+        a.setLocal_direccion("local_direccion");
+        a.setFuncionamiento_hora_apertura("Funcionamiento_hora_apertura");
+        a.setFuncionamiento_hora_cierre("Funcionamiento_hora_cierre");
+        a.setLocal_telefono("Local_telefono");
+        a.setLocal_lat("Local_lat");
+        a.setLocal_lng("Local_lgn");
+        a.setFuncionamiento_dia("Funcionamiento_dia");
+        
+        aLocales.add(a);
+        
         int i = 1;
-        while (it.hasNext())
-        {    
-            JsonNode n = it.next();
+        
+        while (it.hasNext()){
+            JsonNode n = it.Next();
             
-            //System.out.println(n);
-            //System.out.println(n.toPrettyString());
             JsonNode r = n.get("realtime");
             
-           
-            Iterator<JsonNode> itRealTime = r.iterator();
-            while (itRealTime.hasNext())
-            {
-                a = new Aire();
-            
-                a.setId(String.valueOf(i));
-                a.setNombre(n.get("nombre").asText());
-                a.setKey(n.get("key").asText());
-                a.setLatitud(n.get("latitud").asText());
-                a.setLongitud(n.get("longitud").asText());
-                a.setComuna(n.get("comuna").asText());
-                a.setRed(n.get("red").asText());
-                a.setRegion(n.get("region").asText());
-                a.setRegionIndex(n.get("regionindex").asText());
-                a.setCalificacion(n.get("calificacion").asText());
-                a.setEmpresa(n.get("empresa").asText());
+            Iterator<JsonNode> itRealtime = r.iterator();
+            while (itRealtime.hasNext()){
+                a = new Locales();
                 
-                JsonNode nRealTime = itRealTime.next();
+                a.setFecha(n.get("fecha").asText());
+                a.setLocal_id(String.valueOf(i));
+                a.setFk_region(n.get("fk_region").asText());
+                a.setFk_comuna(n.get("fk_comuna").asText());
+                a.setFk_localidad(n.get("fk_localidad").asText());
+                a.setLocal_nombre(n.get("local_nombre").asText());
+                a.setComuna_nombre(n.get("comuna_nombre").asText());
+                a.setLocalidad_nombre(n.get("localidad_nombre").asText());
+                a.setLocal_direccion(n.get("local_direccion").asText());
+                a.setFuncionamiento_hora_apertura(n.get("funcionamiento_hora_apertura").asText());
+                a.setFuncionamiento_hora_cierre(n.get("funcionamiento_hora_cierre").asText());
+                a.setLocal_telefono(n.get("local_telefono").asText());
+                a.setLocal_lat(n.get("local_lat").asText());
+                a.setLocal_lng(n.get("local_lng").asText());
+                a.setFuncionamiento_dia(n.get("funcionamiento_dia").asText());
+                
+                JsonNode nRealtime = itRealtime.Next();
+            }//while itRealtime
+        }
+        return aLocales;
         
-                //System.out.println(nRealTime);
-                //System.out.println(nRealTime.toPrettyString());
-            
-                a.setRealtimeCode(nRealTime.get("code").asText());
-                a.setRealtimeName(nRealTime.get("name").asText());
-                a.setRealtimeDateTime(nRealTime.get("datetime").asText());
-                
-                //System.out.println("\t"+nRealTime.get("code"));
-                //System.out.println("\t"+nRealTime.get("name"));
-                //System.out.println("\t"+nRealTime.get("datetime"));
-                
-                JsonNode nTableRow = nRealTime.get("tableRow");
-                
-                boolean flagError = false;
-                try
-                {
-                
-                    a.setColor(nTableRow.get("color").asText());
-                    a.setStatus(nTableRow.get("status").asText());
-                    a.setStatuscode(nTableRow.get("statuscode").asText());
-                    a.setDatetime(nTableRow.get("datetime").asText());
-                    a.setParameter(nTableRow.get("parameter").asText());
-                    a.setMovil(nTableRow.get("movil").asText());
-                    a.setValue(nTableRow.get("value").asText());
-                    a.setUnit(nTableRow.get("unit").asText());
-                    a.setIcap(nTableRow.get("icap").asText());
-                    a.setIcapText(nTableRow.get("icapText").asText());
-                }
-                catch (Exception ex)
-                {
-                    flagError = true;
-                }
-
-                if (flagError==false)
-                {
-                    aAire.add(a);
-                    System.out.println(a);
-                    i++;
-                }
-                else
-                {
-                    System.out.println("Error de tupla");
-                }
-
-            }//while itRealTime   
-
-        }   
-        return aAire;
-    }
-}//JsonUrlReader
+        
+    
+        
+        
+        
+        
+    } 
+    
+}//jsonUrlReader
